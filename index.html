@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PetShop</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🐾 PetShop </h1>
+
+    <div class="top-controls">
+        <button onclick="filtrar('Todos')">Todos</button>
+        <button onclick="filtrar('Perros')">Perros</button>
+        <button onclick="filtrar('Gatos')">Gatos</button>
+        <button onclick="filtrar('Pájaros')">Pájaros</button>
+
+        <select id="ordenar">
+            <option value="normal">Ordenar</option>
+            <option value="menor">Precio menor a mayor</option>
+            <option value="mayor">Precio mayor a menor</option>
+        </select>
+
+        <button id="btnCarrito" onclick="abrirCarrito()">
+            🛒 Cesta (<span id="contador">0</span>)
+        </button>
+    </div>
+</header>
+
+<main id="productos"></main>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+
+        <span class="cerrar" onclick="cerrarCarrito()">✖</span>
+
+        <h2>Mi Cesta</h2>
+
+        <div id="productosCarrito"></div>
+
+        <h3>Total: <span id="total">0.00</span>€</h3>
+
+        <button class="comprar" onclick="finalizarCompra()">
+            Finalizar Compra
+        </button>
+
+    </div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
